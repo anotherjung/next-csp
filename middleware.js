@@ -7,6 +7,8 @@ export function middleware(request) {
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: ${
       process.env.NODE_ENV === "production" ? "" : `'unsafe-eval'`
     };
+    connect-src 'self' 'nonce-${nonce}' *;
+    frame-src 'self' 'nonce-${nonce}' *;
     style-src 'self' 'nonce-${nonce}';
     img-src 'self' blob: data:;
     font-src 'self';
